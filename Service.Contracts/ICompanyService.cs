@@ -6,5 +6,7 @@ namespace Service.Contracts
         IEnumerable<CompanyDTO> GetAllCompanies(bool trackChanges);
         CompanyDTO GetCompany(Guid companyId, bool trackChanges);
 
+        
+
     }
 }
