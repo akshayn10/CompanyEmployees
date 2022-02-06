@@ -18,20 +18,14 @@ namespace Service
             _mapper = mapper;
         }
 
-            public IEnumerable<CompanyDTO> GetAllCompanies(bool trackChanges)
-            {
-                try
-                {
-                    var companies = _repository.Company.GetAllCompanies(trackChanges);
-                var companiesDTO = _mapper.Map<IEnumerable<CompanyDTO>>(companies);
-                return companiesDTO;
-                }
-                catch (Exception ex)
-                {
-                    _logger.LogError($"Something went wrong in the {nameof(GetAllCompanies)} service method {ex}");
-                    throw;
-                }
-            }
+        public IEnumerable<CompanyDTO> GetAllCompanies(bool trackChanges)
+        {
+
+            var companies = _repository.Company.GetAllCompanies(trackChanges);
+            var companiesDTO = _mapper.Map<IEnumerable<CompanyDTO>>(companies);
+            return companiesDTO;
+        }
+
 
     }
 }
