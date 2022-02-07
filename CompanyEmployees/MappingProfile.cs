@@ -4,7 +4,7 @@ using Shared.DataTransferObjects;
 
 namespace CompanyEmployees
 {
-    public class MappingProfile :Profile
+    public class MappingProfile : Profile
     {
         public MappingProfile()
         {
@@ -12,6 +12,8 @@ namespace CompanyEmployees
                 .ForCtorParam("FullAddress",
                 opt => opt.MapFrom(x => string.Join(' ', x.Address, x.Country)));
             CreateMap<Employee, EmployeeDTO>();
+            CreateMap<CompanyForCreationDTO, Company>();
         }
     }
 }
+
