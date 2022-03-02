@@ -6,6 +6,7 @@
 		: base($"The company with id: {companyId} doesn't exist in the database.")
 	{
 	}
+
     
     }
 }
